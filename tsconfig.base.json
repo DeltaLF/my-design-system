@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@my-ds/button": ["libs/design-system/components/button/src/index.ts"],
+      "@my-ds/card": ["libs/design-system/components/card/src/index.ts"],
+      "@my-ds/theme": ["libs/design-system/theme/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

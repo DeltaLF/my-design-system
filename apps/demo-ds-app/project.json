@@ -23,7 +23,10 @@
           }
         ],
         "styles": ["apps/demo-ds-app/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/design-system/theme/src/lib"]
+        }
       },
       "configurations": {
         "production": {
