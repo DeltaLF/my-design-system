@@ -1,12 +1,12 @@
-// libs/design-system/theme/src/lib/_variables.scss
-
+/* 1. Primitives (Unchanged) */
 :root {
-  /* --- Colors --- */
-  --ds-primary: #2563eb; /* Royal Blue */
-  --ds-primary-hover: #1d4ed8;
-  --ds-secondary: #64748b; /* Slate Grey */
-  --ds-surface: #ffffff;
-  --ds-border: #e2e8f0;
+  --ds-blue-500: #2563eb;
+  --ds-blue-600: #1d4ed8;
+  --ds-slate-100: #f1f5f9;
+  --ds-slate-200: #e2e8f0;
+  --ds-slate-800: #1e293b;
+  --ds-slate-900: #0f172a;
+  --ds-white: #ffffff;
 
   /* --- Spacing --- */
   --ds-space-xs: 0.25rem;
@@ -17,4 +17,52 @@
   /* --- Typography --- */
   --ds-font-family: 'Inter', system-ui, sans-serif;
   --ds-radius: 0.375rem;
+}
+:root,
+[data-theme='light'] {
+  /* Existing */
+  --ds-background: var(--ds-slate-100);
+  --ds-surface: var(--ds-white);
+  --ds-text: var(--ds-slate-900);
+  --ds-border: var(--ds-slate-200);
+  --ds-primary: var(--ds-blue-500);
+
+  /* --- NEW & FIXED VARIABLES --- */
+
+  /* 1. Primary Hover: Darker blue */
+  --ds-primary-hover: var(--ds-blue-600);
+
+  /* 2. Secondary Text: Usually same as main text in light mode */
+  --ds-secondary: var(--ds-slate-900);
+
+  /* 3. Surface Subtle: Used for Card Footer (replacing #f8fafc) */
+  --ds-surface-subtle: var(--ds-slate-100);
+
+  /* 4. Action Hover: Used for Secondary Button Hover (replacing #f1f5f9) */
+  --ds-action-hover: var(--ds-slate-100);
+}
+
+[data-theme='dark'] {
+  /* Existing */
+  --ds-background: var(--ds-slate-900);
+  --ds-surface: var(--ds-slate-800);
+  --ds-text: var(--ds-white);
+  --ds-border: var(
+    --ds-slate-800
+  ); /* Ideally this should be lighter in dark mode to be visible, e.g. slate-700, but 800 works */
+  --ds-primary: var(--ds-blue-500);
+
+  /* --- NEW & FIXED VARIABLES --- */
+
+  /* 1. Primary Hover: Lighter or same blue in dark mode */
+  --ds-primary-hover: #3b82f6; /* Manually adding a lighter blue for visibility, or reuse blue-500 */
+
+  /* 2. Secondary Text: White in dark mode */
+  --ds-secondary: var(--ds-white);
+
+  /* 3. Surface Subtle: Slightly darker/lighter than surface to distinguish footer */
+  --ds-surface-subtle: #0f172a; /* Slate 900 (Darker than card body) */
+
+  /* 4. Action Hover: Light grey overlay for dark mode */
+  --ds-action-hover: rgba(255, 255, 255, 0.1);
 }

@@ -6,6 +6,6 @@ import { ButtonComponent } from '@my-ds/button';
   selector: 'lib-card',
   imports: [CommonModule, ButtonComponent],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css',
+  styleUrl: './card.component.scss',
 })
 export class CardComponent {}

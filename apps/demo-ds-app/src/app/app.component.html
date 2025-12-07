@@ -1,13 +1,23 @@
-<h1>Design System Demo</h1>
-<hr style="margin-bottom: 2rem; border-color: var(--ds-border)" />
+<div class="header">
+  <h1>Design System Demo</h1>
+  <lib-button (click)="themeService.toggleTheme()">
+    Current: {{ themeService.currentTheme() | titlecase }}
+  </lib-button>
+</div>
+
+<hr style="margin: 2rem 0; border-color: var(--ds-border)" />
 
 <lib-card>
-  <h2>This is a Card</h2>
-  <p>It imports buttons from another library!</p>
+  <h2>Standard Card</h2>
+  <p>I follow the global theme.</p>
 </lib-card>
 
 <br /><br />
 
-<lib-button variant="primary">Standalone Button</lib-button>
-
-<router-outlet></router-outlet>
+<div data-theme="light">
+  <lib-card>
+    <h2>Forced Light Card</h2>
+    <p>I stay light even in dark mode!</p>
+    <lib-button variant="primary">I am Blue</lib-button>
+  </lib-card>
+</div>

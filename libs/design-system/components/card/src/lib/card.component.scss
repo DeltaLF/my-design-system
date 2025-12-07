@@ -5,6 +5,8 @@
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   overflow: hidden;
   max-width: 400px;
+
+  color: var(--ds-text);
 }
 
 .card-content {
@@ -12,7 +14,8 @@
 }
 
 .card-footer {
-  background: #f8fafc;
+  background: var(--ds-surface-subtle);
+
   padding: var(--ds-space-md);
   border-top: 1px solid var(--ds-border);
   display: flex;

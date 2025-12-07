@@ -8,14 +8,20 @@ button {
   font-family: var(--ds-font-family);
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
+
+  /* FIXED: Set a default text color for safety.
+     If no class is added, it will use the theme's main text color. */
+  color: var(--ds-text);
 }
 
 /* Variants */
 .primary {
   background-color: var(--ds-primary);
+  /* Primary buttons usually keep white text in both modes for contrast against blue */
   color: white;
 }
+
 .primary:hover:not(:disabled) {
   background-color: var(--ds-primary-hover);
 }
@@ -23,10 +29,13 @@ button {
 .secondary {
   background-color: transparent;
   border-color: var(--ds-border);
+  /* This uses the variable that switches from Black (Light) to White (Dark) */
   color: var(--ds-secondary);
 }
+
 .secondary:hover:not(:disabled) {
-  background-color: #f1f5f9;
+  /* FIXED: Replaced #f1f5f9 with the semantic variable */
+  background-color: var(--ds-action-hover);
 }
 
 button:disabled {
