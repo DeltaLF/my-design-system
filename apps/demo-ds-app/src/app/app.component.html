@@ -21,3 +21,36 @@
     <lib-button variant="primary">I am Blue</lib-button>
   </lib-card>
 </div>
+
+<br /><br />
+
+<lib-card>
+  <h2>Multi Select Component</h2>
+  <p>Testing ControlValueAccessor integration.</p>
+
+  <div style="margin-top: 1rem; max-width: 300px">
+    <lib-multi-select
+      [formControl]="mySelectControl"
+      [options]="fruitOptions"
+      placeholder="Select your fruits"
+    ></lib-multi-select>
+  </div>
+
+  <div
+    style="
+      margin-top: 1rem;
+      padding: 10px;
+      background: var(--ds-surface-subtle);
+      border: 1px solid var(--ds-border);
+      color: var(--ds-text);
+      border-radius: var(--ds-radius);
+    "
+  >
+    <small><strong>Form Value:</strong></small>
+    <pre style="margin: 0; font-family: monospace">{{
+      mySelectControl.value | json
+    }}</pre>
+  </div>
+</lib-card>
+
+<router-outlet></router-outlet>

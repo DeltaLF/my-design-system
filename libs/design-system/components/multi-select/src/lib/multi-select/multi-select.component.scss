@@ -1,0 +1,89 @@
+:host {
+  display: block;
+}
+
+.multi-select-container {
+  /* 1. Use Design System Border */
+  border: 1px solid var(--ds-border);
+
+  /* 2. Use Surface color (or subtle surface for inputs) */
+  /* Using surface-subtle helps the input stand out slightly from the card background */
+  background-color: var(--ds-surface-subtle);
+
+  /* 3. Use Design System Text Color */
+  color: var(--ds-text);
+
+  padding: var(--ds-space-sm) var(--ds-space-md); /* Use your spacing vars */
+  border-radius: var(--ds-radius);
+  cursor: pointer;
+  min-width: 200px;
+  user-select: none;
+  transition: border-color 0.2s, background-color 0.2s;
+
+  &:hover {
+    border-color: var(--ds-primary); /* Hint at interactivity */
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+/* ... existing input styles ... */
+
+/* THE DROPDOWN PANEL (The floating part) */
+.dropdown-panel {
+  background-color: var(--ds-surface-raised);
+  border: 1px solid var(--ds-border-raised);
+  color: var(--ds-text);
+
+  /* Stronger shadow to help lift it off the card */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  border-radius: var(--ds-radius);
+  min-width: 200px;
+  margin-top: var(--ds-space-xs);
+  z-index: 1000; /* Ensure it sits on top of everything */
+}
+
+/* Note: The explicit dark mode override is no longer needed
+   because the variables --ds-surface-raised and --ds-border-raised
+   handle the theme switching automatically.
+*/
+
+/* --- OPTIONS LIST --- */
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px; /* Or whatever max-height you prefer */
+  overflow-y: auto;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  padding: var(--ds-space-sm) var(--ds-space-md);
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--ds-action-hover);
+  }
+}
+
+.option-item-empty {
+  padding: var(--ds-space-sm) var(--ds-space-md);
+  color: var(--ds-text-subtle);
+  font-style: italic;
+}
+
+.option-checkbox {
+  margin-right: var(--ds-space-sm);
+  pointer-events: none; /* The whole item is clickable */
+}
+
+.option-label {
+  flex-grow: 1;
+}
