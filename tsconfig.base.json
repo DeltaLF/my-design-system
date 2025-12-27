@@ -15,6 +15,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@my-design-system/multi-select": [
+        "libs/design-system/components/multi-select/src/index.ts"
+      ],
+      "@my-design-system/select": [
+        "libs/design-system/components/select/src/index.ts"
+      ],
       "@my-ds/button": ["libs/design-system/components/button/src/index.ts"],
       "@my-ds/card": ["libs/design-system/components/card/src/index.ts"],
       "@my-ds/theme": ["libs/design-system/theme/src/index.ts"]

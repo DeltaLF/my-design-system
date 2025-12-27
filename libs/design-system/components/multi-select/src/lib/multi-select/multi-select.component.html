@@ -1,0 +1,43 @@
+<div
+  class="multi-select-container"
+  cdkOverlayOrigin
+  #trigger="cdkOverlayOrigin"
+  (click)="toggleDropdown()"
+  [class.disabled]="disabled"
+>
+  <div class="selected-text-container">
+    <span *ngIf="value.length === 0">{{ placeholder }}</span>
+    <span *ngIf="value.length > 0">{{ value.length }} items selected</span>
+  </div>
+  <span class="arrow">▼</span>
+</div>
+
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="trigger"
+  [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayHasBackdrop]="true"
+  [cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+  (backdropClick)="closeDropdown()"
+>
+  <div class="dropdown-panel">
+    <ul class="options-list">
+      <li
+        *ngFor="let option of options"
+        class="option-item"
+        (click)="toggleOption(option)"
+      >
+        <input
+          type="checkbox"
+          class="option-checkbox"
+          [checked]="isSelected(option)"
+          readonly
+        />
+        <span class="option-label">{{ option.label }}</span>
+      </li>
+      <li *ngIf="options.length === 0" class="option-item-empty">
+        No options available
+      </li>
+    </ul>
+  </div>
+</ng-template>
