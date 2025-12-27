@@ -2,7 +2,12 @@
   "name": "@my-design-system/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve demo-ds-app",
+    "build": "nx run-many --target=build --all",
+    "test": "nx run-many --target=test --all",
+    "lint": "nx run-many --target=lint --all"
+  },
   "private": true,
   "dependencies": {
     "@angular/cdk": "^19.2.19",
