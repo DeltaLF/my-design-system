@@ -5,8 +5,11 @@
   (click)="toggleDropdown()"
   [class.disabled]="disabled"
 >
-  <span *ngIf="value.length === 0">{{ placeholder }}</span>
-  <span *ngIf="value.length > 0">{{ value.length }} items selected</span>
+  <div class="selected-text-container">
+    <span *ngIf="value.length === 0">{{ placeholder }}</span>
+    <span *ngIf="value.length > 0">{{ value.length }} items selected</span>
+  </div>
+  <span class="arrow">▼</span>
 </div>
 
 <ng-template

@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef, HostBinding, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -24,6 +24,7 @@ export class MultiSelectComponent implements ControlValueAccessor {
   @Input() placeholder = 'Select items...';
 
   // --- STATE ---
+  @HostBinding('class.is-open')
   isOpen = false;
   value: any[] = [];
   disabled = false;
