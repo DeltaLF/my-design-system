@@ -10,6 +10,10 @@ import {
   MultiSelectComponent,
   MultiSelectOption, // Now imported directly from the library
 } from '@my-design-system/multi-select';
+import {
+  SelectComponent,
+  SelectOption,
+} from '@my-design-system/select'; // Import new lib
 import { ThemeService } from '@my-ds/theme';
 
 @Component({
@@ -20,6 +24,7 @@ import { ThemeService } from '@my-ds/theme';
     CardComponent,
     ButtonComponent,
     MultiSelectComponent,
+    SelectComponent, // Add SelectComponent
     TitleCasePipe,
     JsonPipe,
   ],
@@ -42,4 +47,15 @@ export class AppComponent {
 
   // Initialize with values that exist in the options list.
   mySelectControl = new FormControl<string[]>(['apple', 'cherry']);
+
+  // --- SingleSelect Demo ---
+  programmingLanguageOptions: SelectOption[] = [
+    { value: 'typescript', label: 'TypeScript' },
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'python', label: 'Python' },
+    { value: 'java', label: 'Java' },
+    { value: 'csharp', label: 'C#' },
+  ];
+
+  mySingleSelectControl = new FormControl<string>('typescript');
 }

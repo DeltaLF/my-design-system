@@ -53,4 +53,35 @@
   </div>
 </lib-card>
 
+<br /><br />
+
+<lib-card>
+  <h2>Single Select Component</h2>
+  <p>Testing ControlValueAccessor integration for single select.</p>
+
+  <div style="margin-top: 1rem; max-width: 300px">
+    <lib-select
+      [formControl]="mySingleSelectControl"
+      [options]="programmingLanguageOptions"
+      placeholder="Select a language"
+    ></lib-select>
+  </div>
+
+  <div
+    style="
+      margin-top: 1rem;
+      padding: 10px;
+      background: var(--ds-surface-subtle);
+      border: 1px solid var(--ds-border);
+      color: var(--ds-text);
+      border-radius: var(--ds-radius);
+    "
+  >
+    <small><strong>Form Value:</strong></small>
+    <pre style="margin: 0; font-family: monospace">{{
+      mySingleSelectControl.value | json
+    }}</pre>
+  </div>
+</lib-card>
+
 <router-outlet></router-outlet>
